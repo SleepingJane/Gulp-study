@@ -21,10 +21,16 @@ const gulpWebpack = require("webpack-stream");
 const webpackConfig = require("./webpack.config.js");
 const isProduction = process.env.NODE_ENV === "production";
 
+// images
+const imagemin = require("gulp-imagemin");
+
 const PATHS = {
     app: "./app",
     dist: "./dist"
 }
+
+// server
+const browserSync = require("browser-sync").create();
 
 gulp.task('clear', () => {
     return del(PATHS.dist);
@@ -63,7 +69,53 @@ gulp.task('scripts', () => {
         .pipe(gulp.dest(`${PATHS.dist}/assets/scripts`));
 });
 
-//gulp.task('images', () => console.log('images'));
-//gulp.task('copy', () => console.log('copy'));
-//gulp.task('server', () => console.log('server'));
-//gulp.task('watch', () => console.log('watch'));
+gulp.task('images', () => {
+    return gulp
+        .src(`${PATHS.app}/common/images/**/*.+(png|jpg|jpeg|gif|svg|ico)`, {
+            since: gulp.lastRun("images")
+        })
+        .pipe(plumber())
+        .pipe(gulpIf(isProduction, imagemin()))
+        .pipe(gulp.dest(`${PATHS.dist}/assets/images`));
+});
+
+gulp.task('copy', () => {
+    return gulp
+        .src(`${PATHS.app}/common/fonts/*.fnt`, 
+        { since: gulp.lastRun("templates") }) 
+        .pipe(plumber())
+        .pipe(gulp.dest(`${PATHS.dist}/assets/fonts`))
+});
+
+gulp.task("server", () => {
+	browserSync.init({
+		server: PATHS.dist
+	});
+	browserSync.watch(PATHS.dist + "/**/*.*").on("change", browserSync.reload);
+});
+
+gulp.task("watch", () => {
+	gulp.watch(`${PATHS.app}/**/*.pug`, gulp.series("templates"));
+	gulp.watch(`${PATHS.app}/**/*.scss`, gulp.series("styles"));
+	gulp.watch(`${PATHS.app}/**/*.js`, gulp.series("scripts"));
+	gulp.watch(
+		`${PATHS.app}/common/images/**/*.+(png|jpg|jpeg|gif|svg|ico)`,
+		gulp.series("images")
+	);
+});
+
+gulp.task(
+	"default",
+	gulp.series(
+		gulp.parallel("templates", "styles", "scripts", "images"),
+		gulp.parallel("watch", "server")
+	)
+);
+
+gulp.task(
+	"production",
+	gulp.series(
+		"clear",
+		gulp.parallel("templates", "styles", "scripts", "images")
+	)
+);
