@@ -1,6 +1,6 @@
-#Gulp4 + Webpack4 starter-kit
+# Gulp4 + Webpack4 starter-kit
 
-##Folder structure in the project:
+## Folder structure in the project:
 - app
     - common
         - fonts
@@ -11,6 +11,6 @@
     - layouts
     - pages
 
-##Basic commands to run the project:
-*npm start* - running the development build.
+## Basic commands to run the project:  
+*npm start* - running the development build.  
 *npm run production* - running the production build.
