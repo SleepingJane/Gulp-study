@@ -82,8 +82,7 @@ gulp.task('images', () => {
 gulp.task('copy', () => {
     return gulp
         .src(`${PATHS.app}/common/fonts/*.fnt`, 
-        { since: gulp.lastRun("templates") }) 
-        .pipe(plumber())
+        { since: gulp.lastRun("copy") }) 
         .pipe(gulp.dest(`${PATHS.dist}/assets/fonts`))
 });
 
@@ -107,7 +106,7 @@ gulp.task("watch", () => {
 gulp.task(
 	"default",
 	gulp.series(
-		gulp.parallel("templates", "styles", "scripts", "images"),
+		gulp.parallel("templates", "styles", "scripts", "images", "copy"),
 		gulp.parallel("watch", "server")
 	)
 );
@@ -116,6 +115,6 @@ gulp.task(
 	"production",
 	gulp.series(
 		"clear",
-		gulp.parallel("templates", "styles", "scripts", "images")
+		gulp.parallel("templates", "styles", "scripts", "images", "copy")
 	)
 );
