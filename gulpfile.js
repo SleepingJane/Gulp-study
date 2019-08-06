@@ -47,9 +47,7 @@ gulp.task('templates', () => {
 
 gulp.task('styles', () => {
     return gulp
-        .src(`${PATHS.app}/common/styles/app.scss`, {
-            since: gulp.lastRun("styles")
-        })
+        .src(`${PATHS.app}/common/styles/app.scss`)
         .pipe(plumber())
         .pipe(gulpIf(!isProduction, sourcemaps.init()))
         .pipe(sass())
@@ -71,9 +69,7 @@ gulp.task('scripts', () => {
 
 gulp.task('images', () => {
     return gulp
-        .src(`${PATHS.app}/common/images/**/*.+(png|jpg|jpeg|gif|svg|ico)`, {
-            since: gulp.lastRun("images")
-        })
+        .src(`${PATHS.app}/common/images/**/*.+(png|jpg|jpeg|gif|svg|ico)`)
         .pipe(plumber())
         .pipe(gulpIf(isProduction, imagemin()))
         .pipe(gulp.dest(`${PATHS.dist}/assets/images`));
