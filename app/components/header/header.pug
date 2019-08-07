@@ -1,6 +1,7 @@
 include ../logo/logo
 include ../search/search
 include ../icon-btn/icon-btn
+include ../menu/menu
 
 mixin header()
     header.header
@@ -11,4 +12,4 @@ mixin header()
                 header.header__btns
                     +icon-btn('assets/images/favourites.svg', 10)(src='favourites')
                     +icon-btn('assets/images/cart.svg', 2)(src='cart')
-            
+            +menu()

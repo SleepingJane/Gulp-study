@@ -38,8 +38,7 @@ gulp.task('clear', () => {
 
 gulp.task('templates', () => {
     return gulp
-        .src(`${PATHS.app}/pages/**/*.pug`, 
-        { since: gulp.lastRun("templates") }) 
+        .src(`${PATHS.app}/pages/**/*.pug`) 
         .pipe(plumber())
         .pipe(pug({ pretty: true })) 
         .pipe(gulp.dest(PATHS.dist)) 
