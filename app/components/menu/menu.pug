@@ -1,27 +1,12 @@
-mixin menu()
-    nav
-        ul(class="main-menu")
-            li
-                a(href="") Мебель
-                ul(class='sub-menu')
-                    li
-                        a(href='') Мягкая мебель
-                    li
-                        a(href='') Столы
-                    li
-                        a(href='') Стулья
-                    li
-                        a(href='') Стеллажи
-                    li
-                        a(href='') Шкафы-купе                                       
-
-            li
-                a(href="") Хранение
-            li
-                a(href="") Спальня
-            li
-                a(href="") Кухня
-            li
-                a(href="") Аксессуары
-            li
-                a(href="") Акции
+mixin menu(arr)
+    nav.menu
+        ul.menu__list
+            if arr
+                each item in arr
+                    li.menu__item
+                        a.menu__link.link(href=item.url)= item.title
+                        if item.submenu
+                            ul.menu__sub-list
+                                each subItem in item.submenu
+                                    li.menu__sub-item
+                                        a.menu__sub-link.link(href=subItem.url)= subItem.title
