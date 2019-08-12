@@ -7,8 +7,12 @@
     background-color: transparent;
     cursor: pointer;
 
-    &__icon{
+    &__icon {
         margin-right: 8px;
+
+        > .icon {
+            display: block;
+        }
     }
 
     &__count{

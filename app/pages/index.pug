@@ -2,6 +2,7 @@
 extends ../layouts/default/default
 
 include ../components/breadcrumbs/breadcrumbs
+include ../components/page-title/page-title
 
 //- Выводим контент
 block content
@@ -15,6 +16,7 @@ block content
                     {value: 'Диваны'}
                 ]
             +breadcrumbs(breadcrumbs)
+        +page-title('Диваны')
         .mt-xl-16
             .row
                 .col-xl-5 left
