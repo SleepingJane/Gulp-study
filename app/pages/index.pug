@@ -1,6 +1,21 @@
 //- Используем стандартный шаблон
 extends ../layouts/default/default
 
+include ../components/breadcrumbs/breadcrumbs
+
 //- Выводим контент
 block content
-    | Index content
+    .container
+        .mt-xl-12.mb-xl-3
+            -
+                var breadcrumbs = [
+                    {url: '#', title: 'Главная', value: 'Главная'},
+                    {url: '#', title: 'Каталог', value: 'Каталог'},
+                    {url: '#', title: 'Мягкая мебель', value: 'Мягкая мебель'},
+                    {value: 'Диваны'}
+                ]
+            +breadcrumbs(breadcrumbs)
+        .mt-xl-16
+            .row
+                .col-xl-5 left
+                .col-xl-18.offset-xl-1
