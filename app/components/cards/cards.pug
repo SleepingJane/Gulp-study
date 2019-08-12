@@ -1,0 +1,13 @@
+include ../icon-btn/icon-btn
+
+mixin cards(item)
+    .cards
+        .cards__top
+            a.link(href=item.url title=item.name)
+            img.cards__img(src=item.img alt='item')
+            span.cards__name.link(href=item.url title=item.name)=item.name
+        .cards__bottom
+            .cards__price=item.price
+            .cards__btns
+                +icon-btn('favourites')
+                +icon-btn('cart')

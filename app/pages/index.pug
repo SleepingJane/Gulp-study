@@ -3,6 +3,7 @@ extends ../layouts/default/default
 
 include ../components/breadcrumbs/breadcrumbs
 include ../components/page-title/page-title
+include ../components/cards-arr/cards-arr
 
 //- Выводим контент
 block content
@@ -17,7 +18,41 @@ block content
                 ]
             +breadcrumbs(breadcrumbs)
         +page-title('Диваны')
-        .mt-xl-16
+        .mt-xl-12
             .row
-                .col-xl-5 left
+                .col-xl-5.pt-xl-4 left
                 .col-xl-18.offset-xl-1
+                    -
+                        var cards=[
+                            {
+                                url:'#',
+                                name: 'Monreal',
+                                img: 'assets/images/item-01.jpg',
+                                price: '10 990 руб.'},
+                            {
+                                url: '#',
+                                name: 'Glasgow',
+                                img: 'assets/images/item-02.jpg',
+                                price: '19 990 руб.'},
+                            {
+                                url: '#',
+                                name: 'Munich',
+                                img: 'assets/images/item-03.jpg',
+                                price: '24 990 руб.'},
+                            {
+                                url: '#',
+                                name: 'Alexandria',
+                                img: 'assets/images/item-04.jpg',
+                                price: '109 990 руб.'},
+                            {
+                                url: '#',
+                                name: 'Karachi',
+                                img: 'assets/images/item-05.jpg',
+                                price: '17 990 руб.'},
+                            {
+                                url: '#',
+                                name: 'Phoenix',
+                                img: 'assets/images/item-06.jpg',
+                                price: '29990 руб.'}
+                        ]
+                    +cards-arr(cards)

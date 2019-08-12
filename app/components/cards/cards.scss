@@ -1,0 +1,62 @@
+.cards {  
+    position:relative;
+    padding:20px;
+
+    &:hover {
+        &::before {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+        transition: opacity $animation-time, visibility $animation-time;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        border-radius: 2px;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    &__price {
+        font-weight: bold;
+    }
+      
+    &__img {
+        object-fit: contain;
+        max-height: 270px;
+    }
+  
+    &__name {
+        display: block;
+        padding-top: 10px;
+        line-height: 1.38;
+    }
+  
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+  
+    &__btns {
+        display: flex;
+        align-items: space-between;
+  
+        .icon-btn {
+            margin-right: 20px;
+            //fill: ;
+            //stroke: ;
+  
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
