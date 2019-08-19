@@ -3,7 +3,7 @@ extends ../layouts/default/default
 
 include ../components/breadcrumbs/breadcrumbs
 include ../components/page-title/page-title
-include ../components/cards-arr/cards-arr
+include ../components/card-list/card-list
 
 //- Выводим контент
 block content
@@ -55,4 +55,4 @@ block content
                                 img: 'assets/images/item-06.jpg',
                                 price: '29990 руб.'}
                         ]
-                    +cards-arr(cards)
+                    +card-list(cards)
