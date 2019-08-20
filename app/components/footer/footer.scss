@@ -1,0 +1,9 @@
+.footer {
+    display: block;
+    background-color: color("grey-lighter");
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+    }
+}

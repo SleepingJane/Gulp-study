@@ -1,0 +1,16 @@
+.social {
+    text-align:right;
+    &__text{
+        display: block;
+        font-size:12px;
+        line-height: 22px;
+        margin-bottom:10px;
+
+    }
+    &__number{
+        display: block;
+        font-size:20px;
+        line-height: 22px;
+
+    }
+}

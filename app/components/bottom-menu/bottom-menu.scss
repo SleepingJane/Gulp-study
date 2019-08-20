@@ -1,0 +1,31 @@
+.bottom-menu {
+	display: flex;
+    justify-content: space-between;
+    
+    
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+        height: 30px;
+        padding: 0 15px;
+        margin-right: 5px;
+        border-radius: 2px;
+        background-color: white;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__link {
+        font-family: $font-family-base;
+        font-size: 14px;
+        line-height: 1.57;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        letter-spacing: normal;
+	}
+}

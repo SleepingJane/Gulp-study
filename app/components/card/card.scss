@@ -51,6 +51,13 @@
   
         .icon-btn {
             margin-right: 20px;
+
+            &:hover {
+                .icon-favourites {
+                    animation-name: heart;
+                    animation-duration: .7s;
+                }                
+            }
   
             &:last-child {
                 margin-right: 0;

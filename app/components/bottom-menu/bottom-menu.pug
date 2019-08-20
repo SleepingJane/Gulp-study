@@ -1,0 +1,7 @@
+mixin bottom-menu(arr)
+    nav.bottom-menu
+        ul.bottom-menu__list
+            if arr
+                each item in arr
+                    li.bottom-menu__item
+                        a.bottom-menu__link.link(href=item.url)= item.title

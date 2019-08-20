@@ -1,2 +1,42 @@
+include ../bottom-menu/bottom-menu
+include ../social/social
+include ../copyright/copyright
+
 mixin footer()
-    footer.footer Footer content
+    footer.footer 
+        .container.pt-lg-8.pb-lg-8
+            .footer__top
+                -
+                    var arr = [
+                        {
+                            title: 'Каталог',
+                            url: '#'
+                        },
+                        {
+                            title: 'Оплата',
+                            url: '#'
+                        },
+                        {
+                            title: 'Доставка',
+                            url: '#'
+                        },
+                        {
+                            title: 'Возврат',
+                            url: '#'
+                        },
+                        {
+                            title: 'Сборка',
+                            url: '#'
+                        },
+                        {
+                            title: 'Помощь',
+                            url: '#'
+                        },
+                        {
+                            title: 'Обратная связь',
+                            url: '#'
+                        }
+                    ]
+                +bottom-menu(arr)
+                +social
+            +copyright
