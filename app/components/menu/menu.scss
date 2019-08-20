@@ -54,6 +54,7 @@
 		box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
 		background-color: color("white");
 		transform: translateX(-50%);
+		z-index: 1;
 		animation: fadeIn $animation-time;
 	}
 

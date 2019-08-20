@@ -4,8 +4,8 @@ mixin card(item)
     .card
         .card__top
             a.link(href=item.url title=item.name)
-            img.card__img(src=item.img alt='item')
-            span.card__name.link(href=item.url title=item.name)=item.name
+                img.card__img(src=item.img alt='item')
+                span.card__name.link(href=item.url title=item.name)=item.name
         .card__bottom
             .card__price=item.price
             .card__btns

@@ -1,0 +1,21 @@
+.filter-color{
+    display:block;
+
+    &__list{
+        display: block;
+    }
+
+    &__item{
+        display: inline-block;
+        margin: 5px;
+
+        span {
+            width: 36px;
+            height: 36px;
+            display: block;
+            border-radius: 50%;
+            background-size: contain !important;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+include ../input-checkbox/input-checkbox
+
+mixin filter-base (arr, title)
+    .filter-base
+        .filter-base__top
+            span.filter-base__top__title= title
+            .filter-base__top__icon
+                +icon-btn('arrow-small')
+        .filter-base__list
+            each item in arr
+                .filter-base__list__item
+                    +input-checkbox(item.name, item.label)

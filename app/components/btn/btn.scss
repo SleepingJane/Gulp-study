@@ -24,6 +24,15 @@
         }
     }
 
+    &_clear {
+        width:100%;
+        color: color("black");
+        background-color: color("white");
+        font-weight: normal;
+        padding: 0;
+        margin: 0 auto;
+    }
+
     &_block {
         width: 100%;
     }
