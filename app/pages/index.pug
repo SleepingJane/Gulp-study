@@ -4,6 +4,7 @@ extends ../layouts/default/default
 include ../components/breadcrumbs/breadcrumbs
 include ../components/page-title/page-title
 include ../components/card-list/card-list
+include ../components/input-checkbox/input-checkbox
 
 //- Выводим контент
 block content
@@ -20,7 +21,14 @@ block content
         +page-title('Диваны')
         .mt-xl-12
             .row
-                .col-xl-5.pt-xl-4 left
+                .col-xl-5.pt-xl-4 
+                    +input-checkbox('test', 'Вельвет')
+                    br
+                    button.btn.btn_primary Button
+                    br
+                    input.btn.btn_primary(type='submit' value='Button')
+                    br
+                    a.btn.btn_primary(href="#") Button
                 .col-xl-18.offset-xl-1
                     -
                         var cards=[
