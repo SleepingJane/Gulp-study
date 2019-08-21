@@ -1,28 +1,28 @@
 .bottom-menu {
-	display: flex;
-    justify-content: space-between;
-    
-    &__nav {
-        margin-bottom: 15px;
-    }
+	//display: flex;
+    //justify-content: space-between;
     
 	&__list {
-		display: flex;
+        display: flex;
+        flex-wrap: wrap;
 	}
 
 	&__item {
-        height: 30px;
-        padding: 4px 15px;
         margin-right: 5px;
+        margin-bottom: 5px;
+        //height: 30px;
+        //padding: 4px 15px;
+        //margin-right: 5px;
         border-radius: 2px;
         background-color: white;
-
-		&:last-child {
-			margin-right: 0;
-		}
+		//&:last-child {
+        //	margin-right: 0;
+		//}
 	}
 
 	&__link {
+        display: inline-flex;
+        padding: 4px 15px;
         font-family: $font-family-base;
         font-size: 14px;
         line-height: 1.57;

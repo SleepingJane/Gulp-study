@@ -37,6 +37,10 @@
 				transform: none;
 			}
 		}
+		
+		@include media-breakpoint-down(md) {
+            margin-right: 50px;
+        }
 	}
 
 	&__link {

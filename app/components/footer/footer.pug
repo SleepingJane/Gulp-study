@@ -6,40 +6,19 @@ mixin footer()
     footer.footer 
         .container
             .row
-                .col-md-13
+                .col-md-12
                     .footer__top
                         -
                             var arr = [
-                                {
-                                    title: 'Каталог',
-                                    url: '#'
-                                },
-                                {
-                                    title: 'Оплата',
-                                    url: '#'
-                                },
-                                {
-                                    title: 'Доставка',
-                                    url: '#'
-                                },
-                                {
-                                    title: 'Возврат',
-                                    url: '#'
-                                },
-                                {
-                                    title: 'Сборка',
-                                    url: '#'
-                                },
-                                {
-                                    title: 'Помощь',
-                                    url: '#'
-                                },
-                                {
-                                    title: 'Обратная связь',
-                                    url: '#'
-                                }
+                                { title: 'Каталог', url: '#'},
+                                { title: 'Оплата', url: '#'},
+                                { title: 'Доставка', url: '#'},
+                                { title: 'Возврат', url: '#'},
+                                { title: 'Сборка', url: '#'},
+                                { title: 'Помощь', url: '#'},
+                                { title: 'Обратная связь', url: '#'}
                             ]
                         +bottom-menu(arr)
                     +copyright
-                .col-lg-5.offset-lg-6
+                .col-lg-5.offset-lg-6.col-md-8.offset-md-4
                     +social
