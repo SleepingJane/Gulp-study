@@ -1,0 +1,5 @@
+mixin checkbox-color(name, color)
+    label.checkbox-color(style={ 'background-color': color })
+        input.checkbox-color__input(type='checkbox' name=name)
+        span.checkbox-color__icon
+            +icon('check')

@@ -4,9 +4,7 @@ extends ../layouts/default/default
 include ../components/breadcrumbs/breadcrumbs
 include ../components/page-title/page-title
 include ../components/card-list/card-list
-include ../components/input-checkbox/input-checkbox
-include ../components/filter-color/filter-color
-include ../components/filter-base/filter-base
+include ../components/filter-list/filter-list
 
 //- Выводим контент
 block content
@@ -25,39 +23,43 @@ block content
             .row
                 .col-xl-5.pt-xl-4 
                     -
-                        var colors=[
-                            {name: 'white', color: 'ffffff'},
-                            {name: 'black', color: '000000'},
-                            {name: 'grey', color: '5a5a5a'},
-                            {name: 'dark-grey', color: '704d35'},
-                            {name: 'orange', color: 'e0791d'},
-                            {name: 'red', color: 'ba0606'},
-                            {name: 'green', color: '38a01a'},
-                            {name: 'dark-blue', color: '314976'},
-                            {name: 'blue', color: '3748a6'}
+                        var filtres=[
+                            {
+                                title: 'Цвет',
+                                type: 'color',
+                                items: [
+                                    {name: 'white', color: '#ffffff'},
+                                    {name: 'black', color: '#000000'},
+                                    {name: 'grey', color: '#5a5a5a'},
+                                    {name: 'dark-grey', color: '#704d35'},
+                                    {name: 'orange', color: '#e0791d'},
+                                    {name: 'red', color: '#ba0606'},
+                                    {name: 'green', color: '#38a01a'},
+                                    {name: 'dark-blue', color: '#314976'},
+                                    {name: 'blue', color: '#3748a6'}
+                                ]
+                            },
+                            {
+                                title: 'Материал',
+                                items: [
+                                    {name: 'valvet', label: 'Вельвет'},
+                                    {name: 'microvelour', label: 'Микровелюр'},
+                                    {name: 'velour', label: 'Велюр'},
+                                    {name: 'jacquard', label: 'Жаккард'},
+                                    {name: 'suede', label: 'Замша'},
+                                    {name: 'gunny', label: 'Рогожка'}
+                                ]
+                            },
+                            {
+                                title: 'Угол',
+                                items: [
+                                    {name: 'left', label: 'Левый'},
+                                    {name: 'right', label: 'Правый'},
+                                    {name: 'universal', label: 'Универсальный'}
+                                ]
+                            }
                         ]
-                    -
-                        var materials=[
-                            {name: 'valvet', label: 'Вельвет'},
-                            {name: 'microvelour', label: 'Микровелюр'},
-                            {name: 'velour', label: 'Велюр'},
-                            {name: 'jacquard', label: 'Жаккард'},
-                            {name: 'suede', label: 'Замша'},
-                            {name: 'gunny', label: 'Рогожка'}
-                        ]
-                    -
-                        var angles=[
-                            {name: 'left', label: 'Левый'},
-                            {name: 'right', label: 'Правый'},
-                            {name: 'universal', label: 'Универсальный'}
-                        ]
-
-                    +filter-color(colors)
-                    +filter-base(materials, 'Материал')
-                    +filter-base(angles, 'Угол')
-
-                    input.btn.btn_primary(type= 'submit' value= 'Применить')
-                    input.btn.btn_clear(type= 'reset' value= 'Очистить фильтр')
+                    +filter-list(filtres)
                     
                 .col-xl-18.offset-xl-1
                     -

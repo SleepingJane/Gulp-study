@@ -1,4 +1,4 @@
-.input-checkbox {
+.checkbox-input {
     display: inline-flex;
     flex-wrap: wrap;
     cursor: pointer;
@@ -53,7 +53,7 @@
         opacity: 0 !important;
 
         &:checked {
-            + .input-checkbox__label {
+            + .checkbox-input__label {
                 &::before {
                     border-color: color("blue");
                     background-color: color("blue");
