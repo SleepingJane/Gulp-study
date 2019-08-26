@@ -37,7 +37,7 @@
         .icon {
             fill: color("black");
             transition: fill $animation-time;
-            transform: rotate(180deg);
+            transform: rotate(360deg);
         }
     }
 
