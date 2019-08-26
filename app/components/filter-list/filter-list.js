@@ -1,4 +1,6 @@
-const filterTrigger = document.querySelector('.filter-list__item__js-filter-trigger');
+const filterTriggerList = document.querySelectorAll('.filter-list__item__js-filter-trigger');
+
+var i;
 
 const classes = {
     isActive: 'is-active'
@@ -12,6 +14,8 @@ const toggleClass = (el, className) => {
     }
 }
 
-filterTrigger.addEventListener('click', (e) => {
-    toggleClass(e.currentTarget, classes.isActive);
-});
+for (i = 0; i < filterTriggerList.length; i++) {
+    filterTriggerList[i].addEventListener('click', (e) => {
+            toggleClass(e.currentTarget, classes.isActive);
+        });
+}
