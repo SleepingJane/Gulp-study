@@ -9,11 +9,13 @@
         }
     }
 
-    &__item__js-filter-trigger{
+    
+    .js-filter-trigger {
         &.is-active {
             .filter__items {
                 display: block;
             }
+
             .filter__title-icon{
                 .icon {
                     transform: rotate(180deg);
@@ -21,6 +23,7 @@
             }
         }
     }
+    
 
     .filter__items {
          display: none;
@@ -29,5 +32,5 @@
         &_color {
             margin-bottom: 30px;
         }
-     }
+    }
 }
