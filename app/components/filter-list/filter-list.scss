@@ -1,7 +1,7 @@
 .filter-list {
     &__btns {
         .btn {
-            //margin-bottom: 20px;
+            margin-bottom: 20px;
 
             &:last-child {
                 margin-bottom: 0;
@@ -9,11 +9,20 @@
         }
     }
 
-    .filter {
-        margin-bottom: 40px;
+    &__item__js-filter-trigger{
+        &.is-active {
+            .filter__items {
+                display: block;
+            }
+        }
+    }
+
+    .filter__items {
+         display: none;
+         margin-bottom: 40px;
 
         &_color {
             margin-bottom: 30px;
         }
-    }
+     }
 }
