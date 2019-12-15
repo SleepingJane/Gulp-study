@@ -1,4 +1,4 @@
-# Gulp4 + Webpack4 starter-kit
+# Aero-мебель (Gulp4 + Webpack4 starter-kit)
 
 ## Folder structure in the project:
 - app
